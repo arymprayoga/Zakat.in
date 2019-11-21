@@ -1,0 +1,74 @@
+<ion-header>
+</ion-header>
+<ion-content padding>
+  <div class="main-content">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+        </ion-col>
+        <ion-col col-4 class="icon-atas-container">
+          <div text-center class="icon-atas">
+            <ion-icon name="custom-balance"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-item class="inputz">
+        <ion-label stacked> Modal Awal (Rp) </ion-label>
+        <ion-input [(ngModel)]="modalFormat" type="tel" clearInput="true" (input)="modalFormat = format(modalFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz">
+        <ion-label stacked> Keuntungan Per Tahun (Rp) </ion-label>
+        <ion-input [(ngModel)]="untungFormat" type="tel" clearInput="true" (input)="untungFormat = format(untungFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz">
+        <ion-label stacked> Piutang (Rp) </ion-label>
+        <ion-input [(ngModel)]="piutangFormat" type="tel" clearInput="true" (input)="piutangFormat = format(piutangFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz">
+        <ion-label stacked> Hutang dan Kerugian (Rp) </ion-label>
+        <ion-input [(ngModel)]="rugiFormat" type="tel" clearInput="true" (input)="rugiFormat = format(rugiFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz">
+        <ion-label stacked> Harga Emas Per Gram (Rp) </ion-label>
+        <ion-input [(ngModel)]="hargaEmasFormat" type="tel" clearInput="true" (input)="hargaEmasFormat = format(hargaEmasFormat)"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col col-4></ion-col>
+        <ion-col col-4>
+          <button ion-button round block (click)="hitung()" color="buabu"> Hitung </button>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2></ion-col>
+        <ion-col col-8>
+          <button ion-button round block color="primary" *ngIf="buttonClicked" class="buttonHasil">{{pNiaga1}}</button>
+        </ion-col>
+        <ion-col col-2></ion-col>
+      </ion-row>
+    </ion-grid>
+    <div>
+      <p class="pNiaga2">{{pNiaga2}}</p>
+    </div>
+    <div class="pengetahuan-niaga">
+      <strong>Syarat Umum :</strong>
+      <ol>
+        <li>Berlalu masanya setahun.</li>
+        <li>Mencapai nishob 85 gr emas.</li>
+        <li>Bebas dari hutang.</li>
+        <li>Kadar zakat yang dikeluarkan adalah 2,5 %.</li>
+        <li>Dapat dibayarkan dengan uang atau barang.</li>
+      </ol>
+      <p text-wrap>
+        <br>
+        <strong>Sumber :</strong>
+        <br>
+        <br> Menurut Ibnu Arabi dalam Syarh at-Turmizi Jilid 2 hal 104 bahwa ayat “pungutlah zakat dari kekayaan mereka” (QS.
+        9:103)
+        <br>
+        <br>Zakat dagang dianalogikan kepada zakat emas, nishabnya adalah 85gr emas, mencapai haul dan dengan tarif 2,5%
+      </p>
+    </div>
+  </div>
+</ion-content>

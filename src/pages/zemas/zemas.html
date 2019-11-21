@@ -1,0 +1,78 @@
+<ion-header>
+</ion-header>
+<ion-content padding>
+  <div class="main-content">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+        </ion-col>
+        <ion-col col-4 class="icon-atas-container">
+          <div text-center class="icon-atas">
+            <ion-icon name="custom-gold"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-item class="inputx">
+        <ion-label>Jenis Harta</ion-label>
+        <ion-select [(ngModel)]="jenisHarta" placeholder="" (ionChange)="showJenisHarta()">
+          <ion-option value="emas">Emas</ion-option>
+          <ion-option value="perak">Perak</ion-option>
+          <ion-option value="uang">Uang</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="inputz" *ngIf="emas">
+        <ion-label stacked>{{jenisHarta2}}</ion-label>
+        <ion-input [(ngModel)]="jumlahHartaFormat" type="tel" clearInput="true" (input)="jumlahHartaFormat = format(jumlahHartaFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz" *ngIf="uang">
+        <ion-label stacked>{{jenisHarta2}}</ion-label>
+        <ion-input [(ngModel)]="jumlahUangFormat" type="tel" clearInput="true" (input)="jumlahUangFormat = format(jumlahUangFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz" *ngIf="hargaEmasInput">
+        <ion-label stacked> Harga {{jenisHarta3}} Per Gram (Rp) </ion-label>
+        <ion-input [(ngModel)]="hargaHartaFormat" type="tel" clearInput="true" (input)="hargaHartaFormat = format(hargaHartaFormat)"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col col-4></ion-col>
+        <ion-col col-4>
+          <button ion-button round block (click)="hitung()" color="buabu"> Hitung </button>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2></ion-col>
+        <ion-col col-8>
+          <button ion-button round block color="primary" *ngIf="buttonClicked" class="buttonHasil">{{pHarta1}}</button>
+        </ion-col>
+        <ion-col col-2></ion-col>
+      </ion-row>
+    </ion-grid>
+    <div>
+      <p class="pEmas2">{{pHarta2}}</p>
+    </div>
+    <div class="pengetahuan-emas">
+      <strong>Syarat Umum :</strong>
+      <ol>
+        <li>Telah sampai Sampai nishob.</li>
+        <li>Telah dimiliki selama satu tahun.</li>
+        <li>Bebas dari hutang yang menyebabkan kurang dari nishob.</li>
+        <li>Jika dipakai sehari-hari
+          <strong>(Mengeluarkan Zakat 1x Seumur Hidup).</strong>
+        </li>
+        <li>Surplus dari kebutuhannya.</li>
+        <li>Dikeluarkan zakat 2,5%.</li>
+        <li>Nishab emas 20 dinar, 1 dinar = 4,25 gram, maka nishab emas adalah 20 X 4,25 gram = 85 gram emas.</li>
+        <li>Nishab Perak adalah 200 dirham, 1 dirham = 2,975 gram, maka nishab perak adalah 200 X 2,975 gram = 595 gram perak.</li>
+        <li>Uang tunai, tabungan, cek, saham(deviden), surat berharga Nishab nya sama dengan emas.</li>
+      </ol>
+      <p text-wrap>
+        <br> <strong>Sumber :</strong>
+        <br>
+        <br> “Jika kamu mempunyai 200 dirham dan sudah cukup setahun maka zakatnya adalah 5 dirham, dan emas hanya dikenakan
+        zakat bila sudah mencapai 20 dinar dan sudah cukup setahun, maka zakatnya adalah ½ dinar setiap bertambah maka dengan
+        hitungan tersebut. Tidak wajib zakat kecuali sampai cukup masa setahun”. (H.R Abu Daud)
+      </p>
+    </div>
+  </div>
+</ion-content>

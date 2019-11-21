@@ -1,0 +1,43 @@
+.inputz{
+    background-color: rgba(255,255,255,0.1);
+    padding-right: 15px;
+    padding-bottom: 8px;
+}
+
+.pengetahuan-fitrah{
+    font-size: 14px;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.buttonHasil{
+    font-size: 18px;
+    text-align: center;
+    border-radius: 10px;
+    background: color($colors, primary);
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.main-content{
+    background: rgba(255,255,255,0.7) no-repeat center center fixed;    
+    padding-bottom: 3px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.icon-atas{
+    font-size: 75px;    
+    padding-top: 10px;
+}
+
+.icon-atas-container{
+    // background: color($colors, primary);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+strong{
+    font-weight: 900;
+}

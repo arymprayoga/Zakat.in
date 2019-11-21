@@ -1,0 +1,116 @@
+<ion-header></ion-header>
+
+<ion-content padding>
+  <div class="main-content">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+        </ion-col>
+        <ion-col col-4 class="icon-atas-container">
+          <div text-center class="icon-atas">
+            <ion-icon name="custom-bar"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-item class="inputx">
+        <ion-label> Jenis Zakat </ion-label>
+        <ion-select [(ngModel)]="jenis" placeholder="" (ionChange)="showJenis()">
+          <ion-option value="saham">Zakat Saham</ion-option>
+          <ion-option value="obligasi">Zakat Obligasi</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="inputx" *ngIf="jenisSahamInput">
+        <ion-label> Jenis Saham </ion-label>
+        <ion-select [(ngModel)]="jenisSaham" placeholder="" (ionChange)="showPengeluaran()">
+          <ion-option value="murni">Perusahaan Industri Murni</ion-option>
+          <ion-option value="dagang">Perusahaan Dagang</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="inputz" *ngIf="jumlahHartaInput">
+          <ion-label stacked> Jumlah Obligasi (Rp) </ion-label>
+          <ion-input [(ngModel)]="jumlahHartaFormat" type="tel" clearInput="true" (input)="jumlahHartaFormat = format(jumlahHartaFormat)"></ion-input>
+        </ion-item>
+      <ion-item class="inputz" *ngIf="pengeluaranInput">
+        <ion-label stacked> Nilai Saham (Rp) </ion-label>
+        <ion-input [(ngModel)]="jumlahSahamFormat" type="tel" clearInput="true" (input)="jumlahSahamFormat = format(jumlahSahamFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz" *ngIf="devidenInput">
+        <ion-label stacked> Deviden (Rp) </ion-label>
+        <ion-input [(ngModel)]="devidenFormat" type="tel" clearInput="true" (input)="devidenFormat = format(devidenFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz" *ngIf="hargaEmasInput">
+        <ion-label stacked> Harga Emas Per Gram (Rp) </ion-label>
+        <ion-input [(ngModel)]="hargaEmasFormat" type="tel" clearInput="true" (input)="hargaEmasFormat = format(hargaEmasFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz" *ngIf="pengeluaranInput">
+        <ion-label stacked> Nilai Asset (Gedung, Alat, dll) (Rp) </ion-label>
+        <ion-input [(ngModel)]="pengeluaranFormat" type="tel" clearInput="true" (input)="pengeluaranFormat = format(pengeluaranFormat)"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col col-4></ion-col>
+        <ion-col col-4>
+          <button ion-button round block (click)="hitung()" color="buabu"> Hitung </button>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2></ion-col>
+        <ion-col col-8>
+          <button ion-button round block color="primary" *ngIf="buttonClicked" class="buttonHasil">{{pSaham1}}</button>
+        </ion-col>
+        <ion-col col-2></ion-col>
+      </ion-row>
+    </ion-grid>
+    <div>
+      <p class="pSaham2">{{pSaham2}}</p>
+    </div>
+    <div class="pengetahuan-saham">
+      <strong>Syarat Umum Zakat Obligasi Konvensional :</strong>
+      <ol>
+        <li>Haul Zakat yaitu telah dimiliki selama 1 tahun.</li>
+        <li>Zakat yang dikeluarkan sebesar 2,5%.</li>
+        <li>Zakat dikeluarkan setiap tahun.</li>
+        <li>Bunga dan keuntungan wajib disedekahkan untuk fakir miskin atau kepentingan umum.</li>
+        <li>Zakat ini dianalogikan dengan zakat komoditi perdagangan.</li>
+      </ol>
+      <br>
+      <strong>Syarat Umum Zakat Obligasi Syariah (Sukuk) :</strong>
+      <ol>
+        <li>Haul zakat yaitu telah dimiliki 1 tahun.</li>
+        <li>Zakat yang dikeluarkan sebesar 2,5%.</li>
+        <li>Zakat dikeluarkan setiap tahun.</li>
+        <li>Zakat ini dianalogikan dengan zakat komoditi perdagangan.</li>
+      </ol>
+      <br>
+      <strong>Syarat Umum Zakat Saham :</strong>
+      <ol>
+        <li>Zakat yang wajib dikeluarkan atas kepemilikan surat berharga, termasuk diantaranya obligasi, reksadana dan saham
+          bursa efek.</li>
+        <li>Sudah dimiliki 1 tahun.</li>
+        <li>Zakat dikeluarkan 1 tahun sekali.</li>
+        <li>Apa bila perusahaan telah mengeluarkan zakat atas nilai saham
+          <strong>(Pemilik saham hanya membayar saham atas deviden).</strong>
+        </li>
+        <li>Berjumlah Setara ≥ 85 gram Emas.</li>
+      </ol>
+      <br>
+      <strong>Perusahaan :</strong>
+      <ol>
+        <li>Saham atas perusahaan Industri Murni (Tidak Melakukan Dagang), yang modalnya terletak pada perlengkapan,peralatan,gedung,dan
+          lainnya , Ex : Pabrik, Hotel, Taksi, dll. Di keluarkan Zakat atas keuntungan bersih sebesar 10% (Tidak di kelurkan
+          Zakat atas Saham)</li>
+        <li>Saham atas perusahaan dagang (Murni Melakukan perdagangan), yang modalnya dalam bentuk barang yang di jual belikan
+          , Ex : Ekspor, Impor, Jual beli barang, dll. Zakatnya adalah 2.5% dari (Nilai Saham Bersih+Deviden)</li>
+      </ol>
+      <p text-wrap>
+        <br>
+        <strong>Sumber :</strong>
+        <br>
+        <br> “Ambillah zakat dari sebagian harta mereka, dengan zakat itu kamu membersihkan dan mensucikan mereka dan mendoalah
+        untuk mereka. Sesungguhnya doa kamu itu (menjadi) ketenteraman jiwa bagi mereka. Dan Allah Maha Mendengar lagi Maha
+        Mengetahui” ( At Taubah 103)
+      </p>
+    </div>
+  </div>
+</ion-content>

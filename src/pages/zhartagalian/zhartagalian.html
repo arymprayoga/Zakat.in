@@ -1,0 +1,62 @@
+<ion-header>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="main-content">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+        </ion-col>
+        <ion-col col-4 class="icon-atas-container">
+          <div text-center class="icon-atas">
+            <ion-icon name="custom-chest"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-item class="inputx">
+        <ion-label>Jenis Harta Galian</ion-label>
+        <ion-select [(ngModel)]="jenisHargal" placeholder="">
+          <ion-option value="galian">Harta Galian (Rikaz)</ion-option>
+          <ion-option value="tambang">Barang Tambang</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="inputz">
+        <ion-label stacked> Jumlah Harta Galian (Rp) </ion-label>
+        <ion-input [(ngModel)]="jumlahHGalianFormat" type="tel" clearInput="true" (input)="jumlahHGalianFormat = format(jumlahHGalianFormat)"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col col-4></ion-col>
+        <ion-col col-4>
+          <button ion-button round block (click)="hitung()" color="buabu"> Hitung </button>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2></ion-col>
+        <ion-col col-8>
+          <button ion-button round block color="primary" *ngIf="buttonClicked" class="buttonHasil">{{pGali1}}</button>
+        </ion-col>
+        <ion-col col-2></ion-col>
+      </ion-row>
+    </ion-grid>
+    <div>
+      <p class="pMadu2">{{pGali2}}</p>
+    </div>
+    <div class="pengetahuan-gali">
+      <strong>Syarat Umum :</strong>
+      <ol>
+        <li>Haul Barang Tambang dan Galian ketika berhasil di dapatkan.</li>
+        <li>Zakat Barang Tambang (Padat dan Cair).</li>
+        <li>Tarif Zakat Rikaz 20% dan Zakat Barang Tambang 2,5 % kecuali ada kemiripan.</li>
+        <li>Zakat Rikaz berbeda dengan zakat Barang Tambang.</li>
+      </ol>
+      <p text-wrap>
+        <strong>Sumber :</strong>
+        <br>
+        <br> Rasulullah saw bersabda: Pada "rikaz" harta galian, zakatnya seperlima (20%) HR Bukhori Muslim].
+      </p>
+    </div>
+  </div>
+</ion-content>

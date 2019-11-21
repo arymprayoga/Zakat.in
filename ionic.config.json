@@ -1,0 +1,7 @@
+{
+  "name": "Zakat",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

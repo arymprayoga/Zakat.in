@@ -1,0 +1,18 @@
+.home{
+    //background-image: url("../assets/imgs/testtt.jpg");
+    //background-color: color($colors, primary);
+    background: url(../assets/imgs/home.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: color($colors, dark);
+}
+
+.toolbar-title{
+    text-align: center;
+}
+
+.image-home{
+    padding-left: 5px;
+    // margin-bottom: 0px;
+    // padding-bottom: 0px;
+    padding-right: 5px;
+}

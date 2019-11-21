@@ -1,0 +1,74 @@
+<!--
+  Generated template for the ZmaduPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="main-content">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+        </ion-col>
+        <ion-col col-4 class="icon-atas-container">
+          <div text-center class="icon-atas">
+            <ion-icon name="custom-honey"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-item class="inputz">
+        <ion-label stacked> Hasil Madu (Rp) </ion-label>
+        <ion-input [(ngModel)]="jumlahMaduFormat" type="tel" clearInput="true" (input)="jumlahMaduFormat = format(jumlahMaduFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz">
+        <ion-label stacked> Pengeluaran (Rp) </ion-label>
+        <ion-input [(ngModel)]="pengeluaranFormat" type="tel" clearInput="true" (input)="pengeluaranFormat = format(pengeluaranFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz">
+        <ion-label stacked> Harga Beras Per Kg (Rp) </ion-label>
+        <ion-input [(ngModel)]="hargaBerasFormat" type="tel" clearInput="true" (input)="hargaBerasFormat = format(hargaBerasFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz">
+        <ion-label>Daerah Pegunungan</ion-label>
+        <ion-checkbox [(ngModel)]="jenisTanah"></ion-checkbox>
+      </ion-item>
+      <ion-row>
+        <ion-col col-4></ion-col>
+        <ion-col col-4>
+          <button ion-button round block (click)="hitung()" color="buabu"> Hitung </button>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2></ion-col>
+        <ion-col col-8>
+          <button ion-button round block color="primary" *ngIf="buttonClicked" class="buttonHasil">{{pMadu1}}</button>
+        </ion-col>
+        <ion-col col-2></ion-col>
+      </ion-row>
+    </ion-grid>
+    <div>
+      <p class="pMadu2">{{pMadu2}}</p>
+    </div>
+    <div class="pengetahuan-madu">
+      <strong>Syarat Umum :</strong>
+      <ol>
+        <li>Nishab Zakat Madu adalah 16 liter Bagdadi / 652,8 Kg.</li>
+        <li>Zakat didapat dari hasil madu dikurangi dengan biaya-biaya untuk mendapatkan Madu tersebut.</li>
+        <li>Nilai Zakat 10 % jika di tanah yang datar dan 5 % jika di pegunungan.</li>
+      </ol>
+      <p text-wrap>
+        <br>
+        <strong>Sumber :</strong>
+        <br>
+        <br> Dari Amru bin Syuaib dari kakeknya dari Nabi SAW berkata: "Sesungguhnya Rasulullah SAW mengambil zakat madu sebesar
+        1/10"(HR Daruqutni).
+      </p>
+    </div>
+  </div>
+</ion-content>

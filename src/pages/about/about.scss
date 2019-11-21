@@ -1,0 +1,64 @@
+.about{
+    background: url(../assets/imgs/testtt.jpg) no-repeat center center fixed;
+    background-size: cover; 
+}
+
+.judul-about{
+    font-weight: 900;
+    color: color($colors, primary);
+    font-size: 15px;
+}
+
+.isi-about{
+    text-align: justify;
+    color: rgb(105,105,105);
+}
+
+// .rowz{
+//     // background: rgba(255,255,255,0.7);  
+// }
+
+.panel-putih{
+    background: rgba(255,255,255,0.7);
+}
+
+.icon-about{
+    font-size: 60px;
+}
+
+.developedby{
+    font-size: 16px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.freepik-desc{
+    font-size: 15px;
+}
+
+.referensi{
+    text-align: center;
+    font-weight: 900;
+    font-size: 16px;
+    padding-top: 15px;
+}
+
+.abouuut{
+    font-weight: 900;
+    font-size: 20px;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    margin-top: 0px;
+    padding-left: 10px;
+}
+
+.panel-putihs{
+    background: rgba(255,255,255,1);
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+// .about-row{
+//    margin: 0px;
+//    padding: 0px;
+// }

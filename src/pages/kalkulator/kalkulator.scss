@@ -1,0 +1,41 @@
+.thumbnail-icon{
+    font-size: 60px;
+    color: color($colors, dark);
+ }
+
+.kalkulator{
+    background: url(../assets/imgs/testtt.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: color($colors, dark);
+}
+
+.thumbnail-entry{
+    border-color: color($colors, light);
+    background-color: color($colors, primary);
+    opacity: 0.9;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    border-right-width: 0.01vmin;
+    border-left-width: 0cm;
+    border-bottom-width: 0cm;
+    border-top-width: 0.1vmin;
+    border-style: solid;
+}
+
+.text-kalkulator{
+    font-size: 16px;
+}
+
+// .thumbnail-entry-left{
+//     border-style: solid;
+    
+//     border-color: color($colors, light);
+//     background-color: color($colors, primary);
+//     opacity: 0.9;
+//     padding-bottom: 25px;
+//     padding-top: 25px;
+// }
+
+// .thumbnail-row{
+//     // margin-top: 20px;
+// }

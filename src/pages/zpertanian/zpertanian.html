@@ -1,0 +1,82 @@
+<!--
+  Generated template for the ZpertanianPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="main-content">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+        </ion-col>
+        <ion-col col-4 class="icon-atas-container">
+          <div text-center class="icon-atas">
+            <ion-icon name="custom-rice"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-item class="inputz">
+        <ion-label stacked> Hasil Pertanian (Kg) </ion-label>
+        <ion-input [(ngModel)]="jumlahTaniFormat" type="tel" clearInput="true" (input)="jumlahTaniFormat = format(jumlahTaniFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz">
+        <ion-label stacked> Harga Beras Per Kg (Rp) </ion-label>
+        <ion-input [(ngModel)]="hargaBerasFormat" type="tel" clearInput="true" (input)="hargaBerasFormat = format(hargaBerasFormat)"></ion-input>
+      </ion-item>
+      <ion-item class="inputz">
+        <ion-label>Menggunakan Irigasi</ion-label>
+        <ion-checkbox [(ngModel)]="irigasi"></ion-checkbox>
+      </ion-item>
+
+      <ion-row>
+        <ion-col col-4></ion-col>
+        <ion-col col-4>
+          <button ion-button round block (click)="hitung()" color="buabu"> Hitung </button>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2></ion-col>
+        <ion-col col-8>
+          <button ion-button round block color="primary" *ngIf="buttonClicked" class="buttonHasil">{{pTani1}}</button>
+        </ion-col>
+        <ion-col col-2></ion-col>
+      </ion-row>
+    </ion-grid>
+    <div>
+      <p class="pTani2">
+        <b>{{pTani2}}</b>
+      </p>
+    </div>
+    <div class="pengetahuan-tani">
+      <strong>Syarat Umum :</strong>
+      <ol>
+        <li>Beragama Islam.</li>
+        <li>Merdeka.</li>
+        <li>Kepemilikan Sempurna.</li>
+        <li>Telah Sampai Nishab.</li>
+        <li>Tanaman tersebut adalah termasuk makanan yang tahan disimpan lama.</li>
+        <li>Tanaman tersebut adalah hasil usaha manusia tidak bersifat tumbuh sendiri.</li>
+      </ol>
+      <p text-wrap>
+        <br>
+        <strong>Sumber :</strong>
+        <br>
+        <br>“Dan Dialah yang menjadikan kebun-kebun yang berjunjung dan yang tidak berjunjung, pohon korma, tanam-tanaman yang
+        bermacam-,macam buahnya, zaitun dan delima yang serupa (bentuk dan warnanya) dan tidak sama (rasanya) Makanlah dari
+        buahnya (yang bermacam-macam itu) bila berbuah. Dan tunaikanlah haknya (zakatnya) di hari memetiknya”. (Q S, 6 :
+        141).
+        <br>
+        <br>As Sunnah: Dari Jabir, Nabi bersabda: “Yang diairi oleh sungai dan hujan 10% sedangkan yang diairi dengan pengairan
+        5%”. Hasil ijma’ ulama.
+
+      </p>
+    </div>
+  </div>
+</ion-content>
